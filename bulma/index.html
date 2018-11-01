@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
 
-    <title>Laravel Frontend Presets </title>
+    <title>Bulma - Laravel Frontend Presets</title>
 
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/7.0.0/markdown-it.min.js" ></script>
@@ -84,6 +84,11 @@
             $('.realContent').find("h2:contains(" + title + ")").next('ul').remove();
             $('.realContent').find("h2:contains(" + title + ")").remove();
         });
+
+        $('.realContent').find("img").each(function (index) {
+            $(this).attr("src", ("https://raw.githubusercontent.com/laravel-frontend-presets/" + file + "/master" + $(this).attr('src')))
+        });
+        $('.realContent').find("img").addClass('img-responsive');
 
         Prism.highlightAll();
     });
